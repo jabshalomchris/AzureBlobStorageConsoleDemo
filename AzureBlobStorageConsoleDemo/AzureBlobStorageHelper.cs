@@ -13,12 +13,8 @@ namespace AzureBlobStorageConsoleDemo
     {
         private readonly BlobContainerClient _blobContainerClient;
 
-        public AzureBlobStorageHelper()
+        public AzureBlobStorageHelper(string BlobUrl, string BlobSASKey)
         {
-            // Blob URL and SAS key
-            string BlobUrl = "";
-            string BlobSASKey = "";
-
             Uri uri = new Uri(BlobUrl);
 
             if (uri.Segments.Length < 2)

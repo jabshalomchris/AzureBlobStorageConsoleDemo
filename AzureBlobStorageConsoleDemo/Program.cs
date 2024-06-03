@@ -3,7 +3,7 @@ using AzureBlobStorageConsoleDemo;
 
 Console.WriteLine("Writing file to Azure Blob Storage...");
 
-AzureBlobStorageHelper azureBlobStorageHelper = new AzureBlobStorageHelper();
+AzureBlobStorageHelper azureBlobStorageHelper = new AzureBlobStorageHelper("","");
 
 // fetch the file from the your local path
 string localFilePath = "path/to/your/local/file.txt";
