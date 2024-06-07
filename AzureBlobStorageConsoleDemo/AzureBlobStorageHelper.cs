@@ -43,11 +43,11 @@ namespace AzureBlobStorageConsoleDemo
         {
             BlobClient blobClient = GetBlobClient(filePath, blobName);
 
-            if (await blobClient.ExistsAsync())
-            {
-                // File already exists, no need to upload
-                return;
-            }
+            //if (await blobClient.ExistsAsync())
+            //{
+            //    // File already exists, no need to upload
+            //    return;
+            //}
 
             await blobClient.UploadAsync(stream, overwrite: true);
         }
