@@ -58,10 +58,13 @@ namespace AzureBlobStorageConsoleDemo
         public async Task<bool> DeleteFileAsync(string filePath, string blobName) =>
             await GetBlobClient(filePath, blobName).DeleteIfExistsAsync();
 
-        public async Task<MemoryStream> GetFileContentAsync(string filePath, string blobName)
+        public async Task<MemoryStream?> GetFileContentAsync(string filePath, string blobName)
         {
             BlobClient blobClient = GetBlobClient(filePath, blobName);
             Response<BlobDownloadInfo> downloadResponse = await blobClient.DownloadAsync();
+
+            if (downloadResponse == null)
+                return null;
 
             MemoryStream stream = new MemoryStream();
             using (Stream fileStream = downloadResponse.Value.Content)
