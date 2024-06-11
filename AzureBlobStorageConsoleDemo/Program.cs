@@ -12,3 +12,8 @@ using FileStream uploadFileStream = File.OpenRead(localFilePath);
 string blobName = "file.txt"; // Name of the blob in the container
 
 await azureBlobStorageHelper.SaveFileToStorageAsync("Files", blobName, uploadFileStream);
+
+public static FileStream GetFileStream()
+{
+
+}
